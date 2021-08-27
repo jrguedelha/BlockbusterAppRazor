@@ -17,38 +17,21 @@ namespace BlockbusterAppRazor.Controllers
         }
 
         //READ-------------------------------------------------------------------------------
-        // GET: Genres
+        // GET: /Genres
         public async Task<IActionResult> Index()
         {
             return View(await _context.Genres.ToListAsync());
         }
 
-        // GET: Genres/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var genreModel = await _context.Genres
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (genreModel == null)
-            {
-                return NotFound();
-            }
-
-            return View(genreModel);
-        }
 
         //ADD-----------------------------------------------------------------------------
-        // GET: Genres/Create
+        // GET: /Genres/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Genres/Create
+        // POST: /Genres/Create
          [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,ReleaseDate,IsActive")] GenreModel genreModel)
@@ -63,7 +46,7 @@ namespace BlockbusterAppRazor.Controllers
         }
 
         //EDIT----------------------------------------------------------------------------
-        // GET: Genres/Edit/5
+        // GET: /Genres/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -79,7 +62,7 @@ namespace BlockbusterAppRazor.Controllers
             return View(genreModel);
         }
 
-        // POST: Genres/Edit/5
+        // POST: /Genres/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ReleaseDate,IsActive")] GenreModel genreModel)
@@ -113,7 +96,7 @@ namespace BlockbusterAppRazor.Controllers
         }
 
         //DELETE---------------------------------------------------------------------------
-        // GET: Genres/Delete/5
+        // GET: /Genres/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -131,7 +114,7 @@ namespace BlockbusterAppRazor.Controllers
             return View(genreModel);
         }
 
-        // POST: Genres/Delete/5
+        // POST: /Genres/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

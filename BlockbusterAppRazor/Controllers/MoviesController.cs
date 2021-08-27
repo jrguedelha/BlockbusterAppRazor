@@ -18,39 +18,21 @@ namespace BlockbusterAppRazor.Controllers
         }
 
         //READ-------------------------------------------------------------------------------
-        // GET: Movies
+        // GET: /Movies
         public async Task<IActionResult> Index()
         {
             return View(await _context.Movies.ToListAsync());
-        }
-
-        // GET: Movies/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var movieModel = await _context.Movies
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (movieModel == null)
-            {
-                return NotFound();
-            }
-
-            return View(movieModel);
-        }
+        }     
 
 
         //ADD-----------------------------------------------------------------------------
-        // GET: Movies/Create
+        // GET: /Movies/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Movies/Create
+        // POST: /Movies/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,ReleaseDate,IsActive,Genre")] MovieModel movieModel)
@@ -66,7 +48,7 @@ namespace BlockbusterAppRazor.Controllers
 
 
         //EDIT----------------------------------------------------------------------------
-        // GET: Movies/Edit/5
+        // GET: /Movies/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -82,7 +64,7 @@ namespace BlockbusterAppRazor.Controllers
             return View(movieModel);
         }
 
-        // POST: Movies/Edit/5
+        // POST: /Movies/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ReleaseDate,IsActive,Genre")] MovieModel movieModel)
@@ -117,7 +99,7 @@ namespace BlockbusterAppRazor.Controllers
 
 
         //DELETE---------------------------------------------------------------------------
-        // GET: Movies/Delete/5
+        // GET: /Movies/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -135,7 +117,7 @@ namespace BlockbusterAppRazor.Controllers
             return View(movieModel);
         }
 
-        // POST: Movies/Delete/5
+        // POST: /Movies/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
