@@ -27,5 +27,13 @@ GO
 
 
 
+Telas da Aplicação:
+![alt text](https://github.com/jrguedelha/BlockbusterAppRazor/blob/master/BlockbusterAppRazor/Screens/AddMovie.jpg?raw=true)
 
-![alt text](https://github.com/jrguedelhaBlockbusterAppRazor/BlockbusterAppRazor/Screens/Main.jpg?raw=true)
+![alt text](https://github.com/jrguedelha/BlockbusterAppRazor/blob/master/BlockbusterAppRazor/Screens/Movies.jpg)
+
+![alt text](https://github.com/jrguedelha/BlockbusterAppRazor/blob/master/BlockbusterAppRazor/Screens/AddMovie.jpg)
+
+![alt text](https://github.com/jrguedelha/BlockbusterAppRazor/blob/master/BlockbusterAppRazor/Screens/EditMovie.jpg)
+
+![alt text](https://github.com/jrguedelha/BlockbusterAppRazor/blob/master/BlockbusterAppRazor/Screens/Excluir.jpg)
