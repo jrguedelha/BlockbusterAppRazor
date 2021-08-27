@@ -1,4 +1,4 @@
-# BlockbusterApp
+# BlockbusterAppRazor
 
 Script para criação do Banco do Dados e tabelas:
 
@@ -24,3 +24,8 @@ ReleaseDate DATE,
 IsActive BIT,
 )
 GO
+
+
+
+
+![alt text](https://github.com/jrguedelhaBlockbusterAppRazor/BlockbusterAppRazor/Screens/Main.jpg?raw=true)
