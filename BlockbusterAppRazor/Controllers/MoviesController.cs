@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BlockbusterAppRazor.Data;
 using BlockbusterAppRazor.Models;
@@ -19,6 +17,7 @@ namespace BlockbusterAppRazor.Controllers
             _context = context;
         }
 
+        //READ-------------------------------------------------------------------------------
         // GET: Movies
         public async Task<IActionResult> Index()
         {
@@ -43,6 +42,8 @@ namespace BlockbusterAppRazor.Controllers
             return View(movieModel);
         }
 
+
+        //ADD-----------------------------------------------------------------------------
         // GET: Movies/Create
         public IActionResult Create()
         {
@@ -50,8 +51,6 @@ namespace BlockbusterAppRazor.Controllers
         }
 
         // POST: Movies/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,ReleaseDate,IsActive,Genre")] MovieModel movieModel)
@@ -65,6 +64,8 @@ namespace BlockbusterAppRazor.Controllers
             return View(movieModel);
         }
 
+
+        //EDIT----------------------------------------------------------------------------
         // GET: Movies/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -82,8 +83,6 @@ namespace BlockbusterAppRazor.Controllers
         }
 
         // POST: Movies/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ReleaseDate,IsActive,Genre")] MovieModel movieModel)
@@ -116,6 +115,8 @@ namespace BlockbusterAppRazor.Controllers
             return View(movieModel);
         }
 
+
+        //DELETE---------------------------------------------------------------------------
         // GET: Movies/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {

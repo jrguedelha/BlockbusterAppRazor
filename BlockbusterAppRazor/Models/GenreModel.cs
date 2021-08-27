@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+
 namespace BlockbusterAppRazor.Models
 {
-    public class MovieModel
+    public class GenreModel
     {
         [Key]
         public int Id { get; set; }
@@ -10,6 +11,5 @@ namespace BlockbusterAppRazor.Models
         public string Title { get; set; }
         public string ReleaseDate { get; set; }
         public bool IsActive { get; set; }
-        public string Genre { get; set; }
     }
 }

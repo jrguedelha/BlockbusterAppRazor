@@ -1,5 +1,3 @@
-using System;
-
 namespace BlockbusterAppRazor.Models
 {
     public class ErrorViewModel
