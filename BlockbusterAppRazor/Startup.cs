@@ -25,6 +25,7 @@ namespace BlockbusterAppRazor
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<MoviesDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<GenresDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
 

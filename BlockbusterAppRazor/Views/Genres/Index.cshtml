@@ -1,0 +1,46 @@
+﻿@model IEnumerable<BlockbusterAppRazor.Models.GenreModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>GÊNEROS DE FILMES</h1>
+
+<p>
+    <a asp-action="Create">Adicionar gênero</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Data de criação
+            </th>
+            <th>
+                Está ativo?
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReleaseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> | 
+                <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
