@@ -21,7 +21,7 @@ CREATE TABLE Genres (
 Id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
 Title VARCHAR (50) NOT NULL,
 ReleaseDate DATE,
-IsActive BIT,
+IsActive BIT
 )
 GO
 
